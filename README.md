@@ -1,6 +1,26 @@
 # CodeCompensatorExample
 Efxclipse Code Compensator Example with all dependencies added in the Plug-in Project. Example includes the dart language
 
+Currently there are definitions for these languages created by Efxclipse Team:
+* adoc.ldef
+* bash.ldef
+* ceylon.ldef
+* dart.ldef
+* gls.ldef
+* go.ldef
+* groovy.ldef
+* java.ldef
+* jmod.ldef
+* js.ldef
+* kotlin.ldef
+* lua.ldef
+* php.ldef
+* python.ldef
+* rust.ldef
+* swift.ldef
+* typescript.ldef
+* xml.ldef
+
 Literature & Documents:
 * Current nightly Efxclipse Runtime & Tooling Builds: [Link](http://maven.bestsolution.at/)
   Tom Schindl Post: [Link](https://tomsondev.bestsolution.at/2017/01/26/make-it-easy-to-consume-efxclipse-libraries-in-maven-or-gradle/)
