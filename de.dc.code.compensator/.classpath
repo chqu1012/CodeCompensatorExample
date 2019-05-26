@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="lib" path="libs/guava-20.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/org.eclipse.fx.code.editor-2.2.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/org.eclipse.fx.code.editor.fx-2.2.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/org.eclipse.fx.core-2.2.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/org.eclipse.fx.core.di-2.2.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/org.eclipse.fx.text-2.2.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/org.eclipse.fx.text.compat-2.2.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/org.eclipse.fx.text.ui-2.2.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/org.eclipse.fx.ui.controls-2.2.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/org.eclipse.fx.ui.panes-2.2.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/org.eclipse.text-3.5.400.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="src-gen"/>
+	<classpathentry kind="src" path="resources"/>
+	<classpathentry kind="src" path="lang-definitions"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
