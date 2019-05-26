@@ -24,12 +24,14 @@ public class SourceViewerSample extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		EventBus eventBus = new SimpleEventBus();
 
-		LocalSourceFileInput f = new LocalSourceFileInput(Paths.get("resources/dc/code/compensator/examples/sample.dart"), eventBus);
+		LocalSourceFileInput f = new LocalSourceFileInput(Paths.get("resources/dc/code/compensator/examples/sample.dart"),
+				eventBus);
 		InputDocument doc = new InputDocument(f, eventBus);
 
 		SourceViewer viewer = new SourceViewer();
 		DartPartitioner partitioner = new DartPartitioner();
-		SourceViewerConfiguration configuration = new DefaultSourceViewerConfiguration(f, new DartPresentationReconciler(), null, null, null, null, null);
+		SourceViewerConfiguration configuration = new DefaultSourceViewerConfiguration(null, f,
+				new DartPresentationReconciler(), null, null, null, null, null, null, null, null, null, null, null);
 
 		doc.setDocumentPartitioner(IDocumentExtension3.DEFAULT_PARTITIONING, partitioner);
 		doc.setDocumentPartitioner(partitioner);

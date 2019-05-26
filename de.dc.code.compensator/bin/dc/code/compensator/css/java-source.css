@@ -11,12 +11,12 @@
 }
 
 .styled-text-area .java.java_keyword {
-	-styled-text-color: -source-editor-keyword;
+	-styled-text-color: lightblue;
 	-fx-font-weight: bold;
 }
 
 .styled-text-area .java.java_doc_default {
-	-styled-text-color: -source-editor-doc;
+	-styled-text-color: lightgreen;
 }
 
 .styled-text-area .java.java_string {
@@ -24,24 +24,24 @@
 }
 
 .styled-text-area .java.java_buitin_type {
-	-styled-text-color: -source-editor-keyword;
+	-styled-text-color: lightblue;
 	-fx-font-weight: bold;
 }
 
 .styled-text-area .java.java_constant {
-	-styled-text-color: -source-editor-keyword;
+	-styled-text-color: black;
 	-fx-font-weight: bold;
 }
 
 .styled-text-area .java.java_annotation {
-	-styled-text-color: -source-editor-annotation;
+	-styled-text-color: gray;
 	-fx-font-weight: bold;
 }
 
 .styled-text-area .java.java_apidoc {
-	-styled-text-color: -source-editor-api-doc;
+	-styled-text-color: lightgreen;
 }
 
 .styled-text-area .java.java_number {
-	-styled-text-color: -source-editor-number;
+	-styled-text-color: brown;
 }

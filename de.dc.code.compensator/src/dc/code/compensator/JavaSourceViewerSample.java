@@ -4,12 +4,14 @@ import java.nio.file.Paths;
 
 import org.eclipse.fx.code.editor.LocalSourceFileInput;
 import org.eclipse.fx.code.editor.fx.services.internal.DefaultSourceViewerConfiguration;
+import org.eclipse.fx.code.editor.services.HoverInformationProvider;
 import org.eclipse.fx.code.editor.services.InputDocument;
 import org.eclipse.fx.core.event.EventBus;
 import org.eclipse.fx.core.event.SimpleEventBus;
 import org.eclipse.fx.text.ui.source.SourceViewer;
 import org.eclipse.fx.text.ui.source.SourceViewerConfiguration;
 import org.eclipse.jface.text.IDocumentExtension3;
+import org.eclipse.jface.text.IRegion;
 
 import dc.code.compensator.javalang.JavaPartitioner;
 import dc.code.compensator.javalang.JavaPresentationReconciler;
@@ -30,8 +32,7 @@ public class JavaSourceViewerSample extends Application {
 
 		SourceViewer viewer = new SourceViewer();
 		JavaPartitioner partitioner = new JavaPartitioner();
-		SourceViewerConfiguration configuration = new DefaultSourceViewerConfiguration(f,
-				new JavaPresentationReconciler(), null, null, null, null, null);
+		SourceViewerConfiguration configuration = null;
 
 		doc.setDocumentPartitioner(IDocumentExtension3.DEFAULT_PARTITIONING, partitioner);
 		doc.setDocumentPartitioner(partitioner);
