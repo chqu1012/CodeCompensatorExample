@@ -1,0 +1,83 @@
+package dc.code.compensator.javalang
+
+^java {
+	partitioning {
+		partition __dftl_partition_content_type
+		partition __java_multi_line_api_comment
+		partition __java_single_line_comment
+		partition __java_multi_line_comment
+		partition __java_string
+		rule {
+			single_line __java_single_line_comment 		"//" 	=> ''
+			multi_line __java_multi_line_api_comment 	"/**" 	=> "*/"
+			multi_line __java_multi_line_comment 		"/*" 	=> "*/"
+			single_line __java_string 					"'"	 	=> "'" escaped by "\\"
+			single_line __java_string 					'"' 	=> '"' escaped by "\\"
+		}
+	}
+	lexical_highlighting {
+		rule __dftl_partition_content_type {
+			default java_default
+			java_operator {
+				character [ ';', '.', '=', '/', '\\', '+', '-', '*', '<', '>', ':', '?', '!', ',', '|', '&', '^', '%', '~' ]
+			}
+			java_bracket {
+				character [ '(', ')', '{', '}', '[', ']' ]
+			}
+			java_keyword {
+				keywords [ 	"abstract", "break", 		"case", 		"catch", 		"class", 		"const", 		"continue",
+							"default", 	"do", 			"else", 		"extends",		"final", 		"finally", 		"for",
+							"goto",		"if", 			"implements", 	"import", 		"instanceof", 	"interface",	"native",
+							"new",		"package", 		"private", 		"protected", 	"public",		"static", 		"super",
+							"switch", 	"synchronized",	"this", 		"throw", 		"throws", 		"transient", 	"try",
+							"volatile", "while",	 	"interface", 	"enum", 		"return"
+						]
+			}
+			java_buitin_type {
+				keywords [ "void", "boolean", "char", "byte", "short", "strictfp", "int", "long", "float", "double" ]
+			}
+			java_constant {
+				keywords [ "true", "false", "null" ]
+			}
+			java_annotation {
+				pattern "@" containing "\\w"
+			}
+			java_number {
+				pattern "\\d" containing "[\\d|_|\\.]"
+			}
+		}
+		rule __java_multi_line_api_comment {
+			default java_apidoc
+		}
+		rule __java_multi_line_comment {
+			default java_doc_default
+		}
+		rule __java_single_line_comment {
+			default java_doc_default
+		}
+		rule __java_string {
+			default java_string
+		}
+		token_def {
+			java_default "-source-editor-code";
+			java_operator "-source-editor-operator";
+			java_bracket "-source-editor-bracket";
+			java_keyword "-source-editor-keyword" bold;
+			java_doc_default "-source-editor-doc";
+			java_string "-source-editor-string";
+			java_buitin_type "-source-editor-keyword" bold;
+			java_constant "-source-editor-keyword" bold;
+			java_annotation "-source-editor-annotation" bold;
+			java_apidoc "-source-editor-api-doc";
+			java_number "-source-editor-number";
+		}
+	}
+	integration {
+		javafx {
+			java "dc.code.compensator.javalang" 
+//			{
+//				project : "org.eclipse.fx.code.editor.langs.codegen.fx"
+//			}
+		}
+	}
+}

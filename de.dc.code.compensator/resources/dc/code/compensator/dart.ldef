@@ -1,7 +1,7 @@
-package eclipsemag.fx.styledtext
+package dc.code.compensator.dart
 
 dart {
-	partitioning {
+	partitioning { 
 		partition __dftl_partition_content_type
 		partition __dart_singlelinedoc_comment
 		partition __dart_multilinedoc_comment
@@ -72,8 +72,8 @@ dart {
 		}
 	}
 	integration {
-		javafx {
-			java "eclipsemag.fx.styledtext.generated"
+		javafx { 
+			java "dc.code.compensator.dart"
 		}
 	}
 }

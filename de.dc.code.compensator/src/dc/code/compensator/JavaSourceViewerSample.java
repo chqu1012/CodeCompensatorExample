@@ -11,25 +11,27 @@ import org.eclipse.fx.text.ui.source.SourceViewer;
 import org.eclipse.fx.text.ui.source.SourceViewerConfiguration;
 import org.eclipse.jface.text.IDocumentExtension3;
 
-import dc.code.compensator.dart.DartPartitioner;
-import dc.code.compensator.dart.DartPresentationReconciler;
+import dc.code.compensator.javalang.JavaPartitioner;
+import dc.code.compensator.javalang.JavaPresentationReconciler;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class SourceViewerSample extends Application {
+public class JavaSourceViewerSample extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		EventBus eventBus = new SimpleEventBus();
 
-		LocalSourceFileInput f = new LocalSourceFileInput(Paths.get("resources/dc/code/compensator/examples/sample.dart"), eventBus);
+		LocalSourceFileInput f = new LocalSourceFileInput(Paths.get("resources/dc/code/compensator/examples/Sample.java"),
+				eventBus);
 		InputDocument doc = new InputDocument(f, eventBus);
 
 		SourceViewer viewer = new SourceViewer();
-		DartPartitioner partitioner = new DartPartitioner();
-		SourceViewerConfiguration configuration = new DefaultSourceViewerConfiguration(f, new DartPresentationReconciler(), null, null, null, null, null);
+		JavaPartitioner partitioner = new JavaPartitioner();
+		SourceViewerConfiguration configuration = new DefaultSourceViewerConfiguration(f,
+				new JavaPresentationReconciler(), null, null, null, null, null);
 
 		doc.setDocumentPartitioner(IDocumentExtension3.DEFAULT_PARTITIONING, partitioner);
 		doc.setDocumentPartitioner(partitioner);
@@ -39,7 +41,7 @@ public class SourceViewerSample extends Application {
 		viewer.setDocument(doc, configuration.getAnnotationModel());
 
 		Scene s = new Scene(new BorderPane(viewer.getTextWidget()));
-		s.getStylesheets().add(getClass().getResource("css/dart-source.css").toExternalForm());
+		s.getStylesheets().add(getClass().getResource("css/java-source.css").toExternalForm());
 		primaryStage.setScene(s);
 		primaryStage.show();
 	}
