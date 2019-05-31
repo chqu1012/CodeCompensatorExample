@@ -1,5 +1,6 @@
 package de.dc.jdt.ast.example;
 
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchManager;
@@ -18,24 +19,26 @@ public class CompilationUnitExecuteExample {
 	 * @throws CoreException 
 	 */
 	public static void main(String[] args) throws CoreException {
-		IJavaProject myJavaProject = null;
-		IVMInstall vmInstall = JavaRuntime.getVMInstall(myJavaProject );
-		   if (vmInstall == null)
-		      vmInstall = JavaRuntime.getDefaultVMInstall();
-		   if (vmInstall != null) {
-		      IVMRunner vmRunner = vmInstall.getVMRunner(ILaunchManager.RUN_MODE);
-		      if (vmRunner != null) {
-		         String[] classPath = null;
-		         try {
-		            classPath = JavaRuntime.computeDefaultRuntimeClassPath(myJavaProject);
-		         } catch (CoreException e) { }
-		         if (classPath != null) {
-		            VMRunnerConfiguration vmConfig = 
-		               new VMRunnerConfiguration("MyClass", classPath);
-		            ILaunch launch = new Launch(null, ILaunchManager.RUN_MODE, null);
-		            vmRunner.run(vmConfig, launch, null);
-		         }
-		      }
-		   }
+		String resourcePath = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString();
+		System.out.println(resourcePath);
+//		IJavaProject myJavaProject = null;
+//		IVMInstall vmInstall = JavaRuntime.getVMInstall(myJavaProject );
+//		   if (vmInstall == null)
+//		      vmInstall = JavaRuntime.getDefaultVMInstall();
+//		   if (vmInstall != null) {
+//		      IVMRunner vmRunner = vmInstall.getVMRunner(ILaunchManager.RUN_MODE);
+//		      if (vmRunner != null) {
+//		         String[] classPath = null;
+//		         try {
+//		            classPath = JavaRuntime.computeDefaultRuntimeClassPath(myJavaProject);
+//		         } catch (CoreException e) { }
+//		         if (classPath != null) {
+//		            VMRunnerConfiguration vmConfig = 
+//		               new VMRunnerConfiguration("MyClass", classPath);
+//		            ILaunch launch = new Launch(null, ILaunchManager.RUN_MODE, null);
+//		            vmRunner.run(vmConfig, launch, null);
+//		         }
+//		      }
+//		   }
 	}
 }
